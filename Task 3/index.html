@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>3D Calculator</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <div class="calculator">
+
+            
+    <div class="top-bar">
+
+        <div class="name-display" id="name-display"></div>
+
+        <div class="battery-indicator">
+
+            <div class="battery-logo">
+
+                <div class="battery-tip"></div>
+
+                <div class="battery-body">
+
+                    <div class="battery-level" id="battery-level"></div>
+
+                    <span class="battery-percentage" id="battery-percentage">100%</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+        <!-- Main calculator display -->
+
+        <div class="display" id="display"><span>0</span></div>
+
+        <div class="buttons">
+
+            <button class="blue" onclick="playSound(); clearDisplay()">AC</button>
+
+            <button class="blue" onclick="playSound(); deleteLast()">CE</button>
+
+            <button onclick="playSound(); append('%')">%</button>
+
+            <button onclick="playSound(); append('/')">/</button>
+
+            <button onclick="playSound(); append('7')">7</button>
+
+            <button onclick="playSound(); append('8')">8</button>
+
+            <button onclick="playSound(); append('9')">9</button>
+
+            <button onclick="playSound(); append('×')">×</button>
+
+            <button onclick="playSound(); append('4')">4</button>
+
+            <button onclick="playSound(); append('5')">5</button>
+
+            <button onclick="playSound(); append('6')">6</button>
+
+            <button onclick="playSound(); append('-')">-</button>
+
+            <button onclick="playSound(); append('1')">1</button>
+
+            <button onclick="playSound(); append('2')">2</button>
+
+            <button onclick="playSound(); append('3')">3</button>
+
+            <button onclick="playSound(); append('+')">+</button>
+
+            <button onclick="playSound(); append('0')">0</button>
+
+            <button onclick="playSound(); append('00')">00</button>
+
+            <button onclick="playSound(); append('.')">.</button>
+
+            <button class="blue" onclick="playSound(); calculate()">=</button>
+
+        </div>
+
+    </div>
+
+
+
+    <audio id="click-sound" src="button.mp3"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
+              
