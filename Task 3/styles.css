@@ -1,0 +1,169 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f7fa;
+    font-family: 'Courier New', monospace;
+}
+
+.calculator {
+    background: linear-gradient(145deg, #b0e0e6, #80d4e3);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+/* Top bar container for name display and battery */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Battery indicator container */
+.battery-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* Battery logo */
+.battery-logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/* Battery tip (the small bump on the side) */
+.battery-tip {
+    width: 3px;
+    height: 12px;
+    margin-bottom: 13px;
+    background: linear-gradient(145deg, #e0e0e0, #f5f5f5);
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Battery body (the main rectangular part) */
+.battery-body {
+    width: 40px;
+    height: 20px;
+    margin-bottom:13px ;
+    background: linear-gradient(145deg, #e0e0e0, #f5f5f5);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Battery level inside the body */
+.battery-level {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%; /* Default width (will be updated dynamically) */
+    background: linear-gradient(145deg, #4caf50, #81c784); /* Green gradient */
+    border-radius: 2px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+/* Battery percentage text inside the body */
+.battery-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.7em;
+    color: #333; /* Dark text */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    z-index: 1; /* Ensure text is above the battery level */
+}
+
+
+/* Retro blinking animation */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Name display with blinking effect */
+.name-display {
+    width: 60%;
+    height: 20px;
+    background: #f0f0f0; /* Dark background */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333; /* Retro green text */
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: 
+        2px 2px 2px rgba(0, 0, 0, 0.3), /* First shadow layer */
+        4px 4px 4px rgba(0, 0, 0, 0.2); /* Second shadow layer */
+    border: 2px solid #ccc;
+}
+
+/* Blinking text inside the name display */
+.name-display span {
+    animation: blink 1s infinite; /* Blinking effect */
+}
+
+/* Main calculator display */
+.display {
+    width: 90%;
+    height: 40px;
+    background: #f0f0f0; /* Dark background */
+    border-radius: 10px;
+    font-size: 2.5em;
+    color: #7d7777; 
+    text-align: right;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-shadow: 
+        2px 2px 2px rgba(0, 0, 0, 0.3), /* First shadow layer */
+        4px 4px 4px rgba(0, 0, 0, 0.2); /* Second shadow layer */
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid #ccc;
+    font-family: 'Digital-7', monospace;
+}
+
+/* Blinking text inside the calculator display */
+.display span {
+    animation: blink 1s infinite; /* Blinking effect */
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 10px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(145deg, #60d4e3, #40c4d3);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    transition: transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.blue {
+    background: linear-gradient(145deg, #007bb6, #005f8a);
+    color: white;
+}
